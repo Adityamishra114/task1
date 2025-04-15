@@ -5,6 +5,8 @@ body {
   color: #1d1d1d;
   background-color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
+  
 }
 
 /* Header */
@@ -13,6 +15,7 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: 600;
+  overflow: hidden;
 }
 .top-bar .container {
   display: flex;
@@ -27,7 +30,7 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  flex: 1;
+  /* flex: 1; */
 }
 .logo span {
   color: #e60023;
@@ -48,6 +51,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  overflow: hidden;
 }
 
 /* Nav Links */
@@ -60,11 +64,16 @@ nav {
 }
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #7e75a7;
   padding: 0.5rem 0.75rem;
   transition: 0.3s;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
 }
-
+.nav-action {
+  display: none;
+}
 /* Nav Actions */
 .nav-actions {
   display: flex;
@@ -121,6 +130,7 @@ nav a {
   gap: 2.5rem;
   padding: 3.75rem 2.5rem;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .intro .text {
   flex: 1;
@@ -154,6 +164,8 @@ nav a {
   margin: 0 2.5rem 1.25rem;
   text-align: center;
   border-radius: 1.125rem;
+  margin-bottom: 170px;
+  overflow: hidden;
 }
 .strategy h2 {
   font-size: 1.75rem;
@@ -165,10 +177,12 @@ nav a {
   margin-bottom: 2.5rem;
 }
 .cards {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25rem;
+  justify-content: space-between;
+  gap: 30px;
+  /* overflow: hidden; */
 }
 .card {
   background-color: white;
@@ -179,10 +193,17 @@ nav a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   font-weight: 500;
+  height: 150px;
 }
 .card img {
-  max-width: 3.75rem;
-  margin-bottom: 0.75rem;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* Tablet View */
@@ -203,15 +224,41 @@ nav a {
     display: flex;
   }
 
-  nav,
   .nav-actions {
+    display: none;
+  }
+  .nav-action {
+    display: flex;
+    gap: 0.625rem;
+    justify-content: flex-end;
+    /* flex: 1;
+      flex-wrap: wrap; */
+  }
+  .nav-action a:hover,
+  .nav-action .active {
+    color: #032433;
+    border-radius: 14px;
+    border: 1px solid #032433;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+  }
+  .contact-btn {
+    background-color: #032433;
+    color: white;
+    padding: 0.5rem 0.875rem;
+    border-radius: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  nav,
+  .nav-action {
     flex-direction: row;
     align-items: center;
     width: 100%;
   }
 
   nav a,
-  .nav-actions a {
+  .nav-action a {
     width: 100%;
     padding: 0.75rem 0;
   }
@@ -221,9 +268,44 @@ nav a {
   }
   .top-bar .container {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+  }
+  .cards {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px !important;
+    overflow: hidden;
+  }
+  .card {
+    background-color: white;
+    color: #1d1d1d;
+    border-radius: 0.75rem;
+    padding: 1.25rem 0.625rem;
+    width: 20%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-weight: 500;
+    height: 150px;
+  }
+  .intro h2 {
+    font-size: 26px;
   }
 
+  .intro p {
+    font-size: 16px;
+  }
+  .breadcrumb {
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 1rem;
+  }
   .intro {
     flex-direction: column;
     text-align: center;
@@ -233,46 +315,41 @@ nav a {
   .intro .image {
     text-align: center;
   }
-
   .strategy {
     padding: 2.5rem 1.25rem;
     margin: 0 1.25rem 1.25rem;
   }
-
+  .cards {
+    width: 86%;
+    padding: 10px 20px;
+    left: 10px;
+  }
   .card {
     width: 90%;
+    height: 150px;
   }
-
-  .breadcrumb {
-    font-size: 0.75rem;
-    padding: 0.5rem 1rem;
-    bottom: -1.5rem;
-  }
-}
-
-/* Mobile View */
-@media (max-width: 600px) {
-  .top-bar {
-    padding: 1rem;
-  }
-
   .strategy h2 {
-    font-size: 1.375rem;
+    font-size: 20px;
   }
 
   .strategy p {
-    font-size: 0.875rem;
+    font-size: 13px;
   }
 
   .intro h2 {
-    font-size: 1.625rem;
+    font-size: 19px;
   }
 
   .intro p {
-    font-size: 0.875rem;
+    font-size: 13px;
   }
 
   .heading h1 {
     font-size: 1.75rem;
+  }
+  .breadcrumb {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    bottom: -1.5rem;
   }
 }
