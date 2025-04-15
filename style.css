@@ -1,0 +1,278 @@
+/* Global Reset and Font */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1d1d1d;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+.top-bar {
+  padding: 1.25rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+.top-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex: 1;
+}
+.logo span {
+  color: #e60023;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #032433;
+}
+
+/* Nav Wrapper (combined nav + actions) */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Nav Links */
+nav {
+  display: flex;
+  flex: 2;
+  gap: 0.625rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  transition: 0.3s;
+}
+
+/* Nav Actions */
+.nav-actions {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: flex-end;
+  /* flex: 1;
+    flex-wrap: wrap; */
+}
+.nav-actions a:hover,
+.nav-actions .active {
+  color: #032433;
+  border-radius: 14px;
+  border: 1px solid #032433;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+.contact-btn {
+  background-color: #032433;
+  color: white;
+  padding: 0.5rem 0.875rem;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Heading Section */
+.heading {
+  background: url("image/Frame.png") no-repeat center center / cover;
+  text-align: center;
+  padding: 2.5rem 0 1.25rem;
+  position: relative;
+}
+.heading h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.breadcrumb {
+  color: #ffffff;
+  position: absolute;
+  font-size: 0.875rem;
+  background-color: #e60023;
+  padding: 0.625rem 1.25rem;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2rem;
+}
+
+/* Intro Section */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3.75rem 2.5rem;
+  flex-wrap: wrap;
+}
+.intro .text {
+  flex: 1;
+}
+.intro h2 {
+  font-size: 2.125rem;
+  font-weight: 700;
+}
+.intro h2 span {
+  color: #e60023;
+}
+.intro p {
+  font-size: 1rem;
+  margin-top: 0.625rem;
+}
+.intro .image {
+  flex: 1;
+  text-align: end;
+}
+.intro img {
+  max-width: 100%;
+  height: auto;
+  max-height: 22rem;
+}
+
+/* Strategy Section */
+.strategy {
+  background-color: #e60023;
+  color: white;
+  padding: 3.75rem 2.5rem;
+  margin: 0 2.5rem 1.25rem;
+  text-align: center;
+  border-radius: 1.125rem;
+}
+.strategy h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+.strategy p {
+  font-size: 0.9375rem;
+  margin-bottom: 2.5rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.card {
+  background-color: white;
+  color: #1d1d1d;
+  border-radius: 0.75rem;
+  padding: 1.25rem 0.625rem;
+  width: 15rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-weight: 500;
+}
+.card img {
+  max-width: 3.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-wrapper.show {
+    display: flex;
+  }
+
+  nav,
+  .nav-actions {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav a,
+  .nav-actions a {
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+  .active,
+  .contact-btn {
+    text-align: center;
+  }
+  .top-bar .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .intro .image {
+    text-align: center;
+  }
+
+  .strategy {
+    padding: 2.5rem 1.25rem;
+    margin: 0 1.25rem 1.25rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .breadcrumb {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    bottom: -1.5rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 1rem;
+  }
+
+  .strategy h2 {
+    font-size: 1.375rem;
+  }
+
+  .strategy p {
+    font-size: 0.875rem;
+  }
+
+  .intro h2 {
+    font-size: 1.625rem;
+  }
+
+  .intro p {
+    font-size: 0.875rem;
+  }
+
+  .heading h1 {
+    font-size: 1.75rem;
+  }
+}
