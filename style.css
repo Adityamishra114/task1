@@ -6,7 +6,6 @@ body {
   background-color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
-  
 }
 
 /* Header */
@@ -180,20 +179,21 @@ nav a {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   justify-content: space-between;
-  gap: 30px;
+  gap: 35px;
   /* overflow: hidden; */
 }
 .card {
   background-color: white;
   color: #1d1d1d;
   border-radius: 0.75rem;
-  padding: 1.25rem 0.625rem;
-  width: 15rem;
+  padding: 1.25rem 0.5rem;
+  width: 16em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   font-weight: 500;
-  height: 150px;
+  height: 180px;
 }
 .card img {
   width: 60px;
@@ -202,8 +202,8 @@ nav a {
 }
 
 .card p {
-  font-size: 14px;
-  font-weight: 500;
+  padding: 0px 20px;
+  font-size: 16px;
 }
 
 /* Tablet View */
